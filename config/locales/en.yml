@@ -1,0 +1,59 @@
+en:
+  # ---------------------------------------------------------------
+  # SHOWROOM
+  # ---------------------------------------------------------------
+  website:
+
+
+  # ---------------------------------------------------------------
+  # DASHBOARD
+  # ---------------------------------------------------------------
+  dashboard:
+
+
+  # ---------------------------------------------------------------
+  # EMAILS
+  # ---------------------------------------------------------------
+  emails:
+
+
+  # ---------------------------------------------------------------
+  # System
+  # ---------------------------------------------------------------
+  devise:
+    sign_in: Sign in
+    sign_up: Sing up
+    remember: Remember me
+    password: Password
+    confirm_psw: Password confirmation
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            email:
+              blank: Email cannot be empty
+              taken: This email is already in use
+            password:
+              blank: Password cannot be empty
+        user:
+          attributes:
+            email:
+              blank: Email cannot be empty
+            password:
+              blank: Password cannot be empty
+
+
+  # ---------------------------------------------------------------
+  # ERROR PAGES
+  # ---------------------------------------------------------------
+  errors:
+    back_link: Return to safety
+    404:
+      title: 404
+      sub_title: Not found! The page you are looking for does not exist.
+      explication: You may have mistyped the address or the page may have moved.
+    500:
+      title: 500
+      sub_title: Internal server error
+      explication: We had a problem loading this page.

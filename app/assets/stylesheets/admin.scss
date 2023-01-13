@@ -1,0 +1,22 @@
+/* ------------------------------- FORMS ------------------------------- */
+.form-label {
+  @apply text-slate-300
+}
+
+.basic-input {
+  @apply w-full appearance-none border border-gray-300 py-1 px-2 bg-white text-gray-700 placeholder-gray-400 shadow-sm
+  focus:outline-none focus:ring-2 focus:ring-sky-600 focus:border-transparent;
+}
+
+.select-input {
+  @apply focus:outline-none focus:ring-2 focus:ring-sky-600 w-full text-gray-700 py-1 px-3 border border-gray-300
+  bg-white cursor-pointer
+}
+
+.submit-btn {
+  @apply mt-4 py-1 px-3 hover:bg-orange-800 text-white cursor-pointer transition duration-300 rounded-lg
+}
+
+.error-input, .error {
+  @apply text-sm font-medium text-red-700
+}

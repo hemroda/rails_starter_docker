@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AppName</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= render "layouts/shared/favicons" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="antialiased">
+    <%= render "website/shared/header" %>
+    <main class="website flex max-w-5xl m-auto min-h-screen -z-40 mt-24 p-2 md:p-0">
+      <%= yield %>
+    </main>
+    <%= render "website/shared/footer" %>
+  </body>
+</html>

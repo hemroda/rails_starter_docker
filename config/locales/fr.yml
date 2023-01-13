@@ -1,0 +1,82 @@
+fr:
+  # ---------------------------------------------------------------
+  # SHOWROOM
+  # ---------------------------------------------------------------
+  website:
+
+
+  # ---------------------------------------------------------------
+  # DASHBOARD
+  # ---------------------------------------------------------------
+  dashboard:
+
+
+  # ---------------------------------------------------------------
+  # EMAILS
+  # ---------------------------------------------------------------
+  emails:
+    welcome_email:
+      subject: Bienvenue sur Maavita
+    invite_user_email:
+      subject: "Tu es invité à %{project_name}"
+    project_finished_email:
+      subject: "%{project_name} terminé avec succès!"
+    invoice_verified_email:
+      subject: Votre paiement a été validé !
+    overdue_remainder_email:
+      subject: Oups! Vous avez manqué la date!
+      payment_link: Lien vers le payment de la contribution
+
+
+  # ---------------------------------------------------------------
+  # System
+  # ---------------------------------------------------------------
+  devise:
+    sign_in: Se connecter
+    sign_up: S'inscrire
+    remember: Se souvenir de moi
+    password: Mot de passe
+    confirm_psw: Confirmation mot de passe
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            email:
+              blank: L'e-mail ne peut pas être vide
+              taken: Cet email est déjà utilisé
+            password:
+              blank: Le mot de passe ne peut pas être vide
+        address:
+          attributes:
+            street_number:
+              blank: Numéro de rue ne peut pas être vide
+            street_name:
+              blank: Nom de rue ne peut pas être vide
+            city:
+              blank: La ville ne peut pas être vide
+            country:
+              blank: Pays ne peut pas être vide
+            zip_code:
+              blank: Code postal ne peut pas être vide
+        user:
+          attributes:
+            email:
+              blank: L'e-mail ne peut pas être vide
+            password:
+              blank: Le mot de passe ne peut pas être vide
+
+
+  # ---------------------------------------------------------------
+  # ERROR PAGES
+  # ---------------------------------------------------------------
+  errors:
+    back_link: Retour en lieu sûr
+    404:
+      title: 404
+      sub_title: Pas trouvé! La page que vous recherchez n'existe pas.
+      explication: Vous avez peut-être mal tapé l'adresse ou la page a peut-être été déplacée.
+    500:
+      title: 500
+      sub_title: Erreur interne du serveur
+      explication: Nous avons rencontré un problème lors du chargement de cette page.

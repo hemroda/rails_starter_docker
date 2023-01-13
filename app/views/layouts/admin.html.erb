@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <title>Admin - AppName</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= render "layouts/shared/favicons" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="antialiased">
+    <div class="admin flex max-h-screen">
+      <%= render "admin/shared/sidenav" %>
+      <main class="admin flex flex-col h-screen w-full pt-16 md:pt-0 md:ml-44 px-1 md:px-3 bg-slate-500">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>

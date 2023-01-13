@@ -1,0 +1,13 @@
+<div class="flex justify-end items-center p-2">
+  <% if local_assigns[:edit_link].present? %>
+    <%= link_to edit_link, class: "mr-3 hover:text-orange-800" do %>
+      <%= heroicon "pencil-square", options: { class: "w-4 text-blue-600", disable_default_class: true } %>
+    <% end %>
+  <% end %>
+  <% if local_assigns[:delete_link].present? %>
+    <%= button_to delete_link, :method => "delete", remote: true,
+                  class: "text-red-700 hover:text-red-500", data: { confirm: confirmation_message } do %>
+      <%= heroicon "trash", options: { class: "w-4 text-red-900", disable_default_class: true } %>
+    <% end %>
+  <% end %>
+</div>

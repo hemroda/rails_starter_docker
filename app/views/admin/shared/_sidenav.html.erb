@@ -1,0 +1,42 @@
+<div class="hidden fixed sidenav w-44 h-screen md:flex flex-col justify-between bg-white bg-slate-900 px-6 py-8 shadow-xl
+            text-slate-300 text-base font-medium tracking-tight">
+  <!-- Logo -->
+  <div>
+    <%= link_to image_tag("shared/logo.png", alt: "AppName logo", width: "70",
+                          class: "flex items-center border bg-slate-500 p-2"), admin_root_path %>
+  </div>
+
+  <!--  Navigation-->
+  <nav>
+    <ul>
+      <li class="mb-2">
+        <% if @user %>
+          <%= link_to "Users", admin_users_path,
+                      class: "#{ 'text-orange-800' unless @user.id == current_user.id }" %>
+        <% else %>
+          <%= link_to "Users", admin_users_path,
+                      class: "#{ 'text-orange-800' if (%w[users].include?(controller_name) && %w[index].include?(action_name)) }" %>
+        <% end %>
+      </li>
+      <li class="border border-gray-300 my-3"></li>
+      <li class="mb-2">
+        <%= link_to "######", "#",
+                    class: "#{params[:controller] == "admin/posts" ? 'text-orange-800' : '' }" %>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Profile & System -->
+  <nav>
+    <ul>
+      <li class="mb-2">
+        <%= link_to "Profile", admin_user_path(current_user.id),
+                    class: "#{current_page?(admin_user_path(current_user.id)) ? 'text-orange-800' : '' }" %>
+      </li>
+      <li>
+        <%= button_to "Logout", destroy_user_session_path, :method => "delete", remote: true,
+                      class: "text-red-500", data: { confirm: "You sure?" } %>
+      </li>
+    </ul>
+  </nav>
+</div>

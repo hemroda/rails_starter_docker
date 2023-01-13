@@ -1,0 +1,7 @@
+@import "admin.scss";
+@import "actiontext.scss";
+@import "pagy.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
