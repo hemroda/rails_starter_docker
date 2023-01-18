@@ -34,8 +34,8 @@
                     class: "#{current_page?(admin_user_path(current_user.id)) ? 'text-orange-800' : '' }" %>
       </li>
       <li>
-        <%= button_to "Logout", destroy_user_session_path, :method => "delete", remote: true,
-                      class: "text-red-500", data: { confirm: "You sure?" } %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, 
+                      class: "text-red-500", form: { data: { turbo_confirm: 'Are you sure?' } } %>
       </li>
     </ul>
   </nav>
