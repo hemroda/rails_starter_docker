@@ -45,11 +45,14 @@ gem "sprockets-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+# Simple, efficient background processing for Ruby (https://sidekiq.org)
+gem "sidekiq", "~> 7.0.3"
 
 # Forms made easy! (https://github.com/heartcombo/simple_form)
 gem "simple_form", "~> 5.1.0"
+
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
