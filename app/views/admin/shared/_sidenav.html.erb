@@ -33,6 +33,9 @@
         <%= link_to "Profile", admin_user_path(current_user.id),
                     class: "#{current_page?(admin_user_path(current_user.id)) ? 'text-orange-800' : '' }" %>
       </li>
+      <li class="mb-2">
+        <%= link_to "Website", root_path, target: "_blank", class: "hover:text-orange-800" %>
+      </li>
       <li>
         <%= button_to "Logout", destroy_user_session_path, method: :delete, 
                       class: "text-red-500", form: { data: { turbo_confirm: 'Are you sure?' } } %>
