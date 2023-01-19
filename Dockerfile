@@ -1,35 +1,51 @@
 FROM ruby:3.2.0-alpine
 
-RUN apk add --update --virtual \
-  runtime-deps \
-  postgresql-client \
-  build-base \
-  libxml2-dev \
-  libxslt-dev \
-  nodejs \
-  yarn \
-  libffi-dev \
-  readline \
-  build-base \
-  postgresql-dev \
-  sqlite-dev \
-  libc-dev \
-  linux-headers \
-  readline-dev \
-  file \
-  imagemagick \
-  git \
-  tzdata \
-  && rm -rf /var/cache/apk/*
+ENV BUNDLER_VERSION=2.4.1
+
+RUN apk add --update --no-cache \
+      binutils-gold \
+      build-base \
+      curl \
+      file \
+      g++ \
+      gcc \
+      git \
+      less \
+      libstdc++ \
+      libffi-dev \
+      libc-dev \ 
+      linux-headers \
+      libxml2-dev \
+      libxslt-dev \
+      libgcrypt-dev \
+      make \
+      readline-dev \
+      file \
+      netcat-openbsd \
+      nodejs \
+      openssl \
+      pkgconfig \
+      postgresql-dev \
+      tzdata \
+      yarn \
+      imagemagick
+
+RUN gem install bundler -v 2.4.1
 
 WORKDIR /app
-COPY . /app/
 
-ENV BUNDLE_PATH /gems
-RUN yarn install
-RUN bundle install
+COPY Gemfile Gemfile.lock ./
 
-ENTRYPOINT ["bin/rails"]
-CMD ["s", "-b", "0.0.0.0"]
+# builds nokigiri with the libxml2 and libxslt library versions 
+RUN bundle config build.nokogiri --use-system-libraries
 
-EXPOSE 3000
+# checks that the gems are not already installed before installing them.
+RUN bundle check || bundle install
+
+COPY package.json yarn.lock ./
+
+RUN yarn install --check-files
+
+COPY . ./ 
+
+ENTRYPOINT ["./bin/docker-entrypoint.sh"]

@@ -1,0 +1,2 @@
+CREATE USER sudocruder;
+ALTER USER sudocruder WITH SUPERUSER;
