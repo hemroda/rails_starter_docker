@@ -29,7 +29,7 @@ Migrations are run during the build, so you only need to seed the DB:
 ```
 
 ```sh
-❯ docker-compose exec web bin/rails db:seed
+❯ docker-compose exec app bin/rails db:seed
 ```
 
 ```sh
