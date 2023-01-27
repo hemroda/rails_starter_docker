@@ -1,2 +1,2 @@
-CREATE USER sudocruder;
-ALTER USER sudocruder WITH SUPERUSER;
+CREATE USER appuser;
+ALTER USER appuser WITH SUPERUSER;
