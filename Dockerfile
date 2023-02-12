@@ -13,7 +13,7 @@ RUN apk add --update --no-cache \
       less \
       libstdc++ \
       libffi-dev \
-      libc-dev \ 
+      libc-dev \
       linux-headers \
       libxml2-dev \
       libxslt-dev \
@@ -36,7 +36,7 @@ WORKDIR /app
 
 COPY Gemfile Gemfile.lock ./
 
-# builds nokigiri with the libxml2 and libxslt library versions 
+# builds nokigiri with the libxml2 and libxslt library versions
 RUN bundle config build.nokogiri --use-system-libraries
 
 # checks that the gems are not already installed before installing them.
@@ -46,6 +46,6 @@ COPY package.json yarn.lock ./
 
 RUN yarn install --check-files
 
-COPY . ./ 
+COPY . ./
 
 ENTRYPOINT ["./bin/docker-entrypoint.sh"]
