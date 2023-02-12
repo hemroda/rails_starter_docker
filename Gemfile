@@ -28,10 +28,10 @@ gem "pagy", "~> 6.0.0"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma", "~> 6.1.0"
 
-# Use main development branch of Rails
-gem "rails", github: "rails/rails", branch: "main"
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # Object-based searching for Active Record and Mongoid (currently). (https://github.com/activerecord-hackery/ransack)
 gem "ransack", "~> 3.2.1"
@@ -66,7 +66,7 @@ end
 
 group :test do
   # RSpec for Rails (https://github.com/rspec/rspec-rails)
-  gem "rspec-rails", "~> 6.0.0"
+  gem "rspec-rails", "~> 6.0.1"
 end
 
 group :development, :test do
